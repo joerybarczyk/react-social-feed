@@ -4,9 +4,9 @@
     padding-left: 60px;
     padding-right: 60px;
     padding-bottom: 20px;
-    border-style: solid;
-    border-color: rgb(112, 112, 112);
-    border-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(112, 112, 112);
+    border-bottom-width: 1px;
 }
 
 .button {

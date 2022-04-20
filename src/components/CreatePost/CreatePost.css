@@ -1,0 +1,19 @@
+input {
+    width: 100%;
+}
+
+.form-body {
+    width: 1049px;
+    padding: 22px 19px 28px 19px;
+    background-color: white;
+}
+
+.form__label {
+    font-size: 27px;
+    font-weight: 600;
+    color: rgb(112, 112, 112)
+}
+
+.create {
+    width: 100%;
+}

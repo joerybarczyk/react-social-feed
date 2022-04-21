@@ -1,46 +1,58 @@
-import React, { useState } from 'react';
-import './CreatePost.css'
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "./CreatePost.css";
 
 function CreatePost(props) {
+  const [postAuthor, setPostAuthor] = useState("");
+  const [postMessage, setPostMessage] = useState("");
 
-    const [postAuthor, setPostAuthor] = useState('');
-    const [postMessage, setPostMessage] = useState('');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let newPost = {
+      author: postAuthor,
+      message: postMessage,
+      status: null,
+      date: new Date().toLocaleString(),
+    };
+    console.log(
+      `Post from handleSubmit in CreatePost: ${JSON.stringify(newPost)}`
+    );
+    props.addNewPost(newPost);
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        let newPost = {
-            author: postAuthor,
-            message: postMessage,
-            status: null,
-            date: new Date().toLocaleString()
-        }
-        console.log(`Post from handleSubmit in CreatePost: ${JSON.stringify(newPost)}`)
-        props.addNewPost(newPost)
-    }
-    
-    return ( 
-        <form className="form-body" onSubmit={handleSubmit}>
-            <div className='row'>
-                <div className='col-1'>
-                    <label className='form__label secondary-color'>Name</label>
-                </div>
-                <div className='col-8'>
-                    <input type="text" onChange={(event) => setPostAuthor(event.target.value)}/>
-                </div>
-            </div>
-            <div className='row'>
-                <div className='col-1'>
-                    <label className='form__label'>Post</label>
-                </div>
-                <div className='col-8'>
-                    <input type="text" onChange={(event) => setPostMessage(event.target.value)}/>
-                </div>
-                <div className='col'>
-                    <button className='btn btn-primary create' type="submit">Create</button>
-                </div>
-            </div>
-        </form>
-     );
+  return (
+    <form className="form-body" onSubmit={handleSubmit}>
+      <Container>
+        <Row>
+          <Col md={1}>
+            <label className="form__label secondary-color">Name</label>
+          </Col>
+          <Col md={8}>
+            <input
+              type="text"
+              onChange={(event) => setPostAuthor(event.target.value)}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={1}>
+            <label className="form__label">Post</label>
+          </Col>
+          <Col md={8}>
+            <input
+              type="text"
+              onChange={(event) => setPostMessage(event.target.value)}
+            />
+          </Col>
+          <Col>
+            <button className="btn btn-primary create" type="submit">
+              Create
+            </button>
+          </Col>
+        </Row>
+      </Container>
+    </form>
+  );
 }
 
 export default CreatePost;

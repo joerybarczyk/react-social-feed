@@ -14,9 +14,6 @@ function CreatePost(props) {
       status: null,
       date: new Date().toLocaleString(),
     };
-    console.log(
-      `Post from handleSubmit in CreatePost: ${JSON.stringify(newPost)}`
-    );
     props.addNewPost(newPost);
   };
 

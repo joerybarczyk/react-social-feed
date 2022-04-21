@@ -8,8 +8,9 @@ function App() {
   const samplePosts = require("./samplePosts.json");
   const [posts, setPosts] = useState(samplePosts);
 
-  const addNewPost = function (post) {
-    let tempPosts = [post, ...posts];
+  const addNewPost = function (newPost) {
+    newPost["id"] = posts.length;
+    let tempPosts = [...posts, newPost];
     setPosts(tempPosts);
   };
 

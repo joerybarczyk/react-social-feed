@@ -1,0 +1,16 @@
+.newest-first {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.oldest-first {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-order {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: right;
+}

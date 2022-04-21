@@ -1,22 +1,23 @@
 .body {
-    width: 1049px;
-    background-color: white;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-bottom: 20px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(112, 112, 112);
-    border-bottom-width: 1px;
+  width: 1049px;
+  background-color: white;
+  padding-top: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(112, 112, 112);
+  border-bottom-width: 1px;
 }
 
 .button {
-    background-color: default;
+  color: #848484;
 }
 
 .button--liked {
-    background-color: green;
+  color: green;
 }
 
-.button--disliked { 
-    background-color: red;
+.button--disliked {
+  color: red;
 }

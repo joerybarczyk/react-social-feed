@@ -1,19 +1,28 @@
 input {
-    width: 100%;
+  width: 100%;
+  padding: 1em;
 }
 
-.form-body {
-    width: 1049px;
-    padding: 22px 19px 28px 19px;
-    background-color: white;
+textarea {
+  width: 100%;
+  padding: 0 1em 0 1em;
+  min-height: 2em;
+  max-height: 6em;
 }
 
-.form__label {
-    font-size: 27px;
-    font-weight: 600;
-    color: rgb(112, 112, 112)
+button {
+  width: 100%;
 }
 
-.create {
-    width: 100%;
+.form__body {
+  width: 1049px;
+  height: auto;
+}
+
+.form__name-input {
+  height: 2em;
+}
+
+.form__post-input {
+  height: 6em;
 }

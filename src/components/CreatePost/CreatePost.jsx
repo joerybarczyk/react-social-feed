@@ -18,7 +18,7 @@ function CreatePost(props) {
   };
 
   return (
-    <div className={props.className}>
+    <div className="app__component rounded-border">
       <form className="form__body" onSubmit={handleSubmit}>
         <Container>
           <Row>

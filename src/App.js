@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import DisplayPosts from "./components/DisplayPosts/DisplayPosts";
 import CreatePost from "./components/CreatePost/CreatePost";
+import Post from "./components/Post/Post";
 import "./App.css";
 
 function App() {
@@ -14,27 +15,30 @@ function App() {
     setPosts(tempPosts);
   };
 
-  const updatePost = function (postIndex, updatedPost) {
+  const updatePost = function (updatedPost) {
     setPosts([
-      ...posts.slice(0, postIndex),
+      ...posts.slice(0, updatedPost.id),
       updatedPost,
-      ...posts.slice(postIndex + 1),
+      ...posts.slice(updatedPost.id + 1),
     ]);
   };
 
   return (
-    <div className="app__body">
+    <>
       <NavBar />
-      <div style={{ "padding-top": "140px" }} className="centered">
-        <CreatePost
-          className="app__component rounded-border"
-          addNewPost={addNewPost}
-        />
-        <div className="app__component rounded-border">
-          <DisplayPosts updatePost={updatePost} posts={posts} />
-        </div>
+      <div style={{ paddingTop: "140px" }} className="centered">
+        <CreatePost addNewPost={addNewPost} />
+        <DisplayPosts updatePost={updatePost} posts={posts}>
+          {posts.map((post, index) => {
+            return (
+              <div key={index}>
+                <Post updatePost={updatePost} postId={index} post={post} />
+              </div>
+            );
+          })}
+        </DisplayPosts>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,14 @@
+:root {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(112, 112, 112);
+  --app-bg-color: rgb(226, 242, 238);
+  --component-bg-color: rgb(255, 255, 255);
+  --primary-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 html,
 body,
 #root {
-  height: 100%;
+  height: auto;
+  background-color: var(--app-bg-color);
 }

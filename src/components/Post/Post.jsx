@@ -6,12 +6,13 @@ import "./Post.css";
 function Post(props) {
   function updateStatus(status) {
     const tempPost = {
+      id: props.post.id,
       author: props.post.author,
       message: props.post.message,
       status: status,
       date: props.post.date,
     };
-    props.updatePost(props.postId, tempPost);
+    props.updatePost(tempPost);
   }
 
   function setStatus(status) {

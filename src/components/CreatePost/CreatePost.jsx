@@ -18,14 +18,14 @@ function CreatePost(props) {
   };
 
   return (
-    <div className="app__component rounded-border">
+    <section className="app__component rounded-border">
       <form className="form__body" onSubmit={handleSubmit}>
         <Container>
           <Row>
-            <Col md={1}>
+            <Col lg={1}>
               <label className="secondary-text">Name</label>
             </Col>
-            <Col md={9} className="d-flex align-items-center">
+            <Col lg={9} className="d-flex align-items-center">
               <input
                 className="form__name-input rounded-border"
                 type="text"
@@ -34,10 +34,10 @@ function CreatePost(props) {
             </Col>
           </Row>
           <Row>
-            <Col md={1}>
+            <Col lg={1}>
               <label className="secondary-text">Post</label>
             </Col>
-            <Col md={9}>
+            <Col lg={9}>
               <textarea
                 className="form__post-input rounded-border"
                 type="text"
@@ -52,7 +52,7 @@ function CreatePost(props) {
           </Row>
         </Container>
       </form>
-    </div>
+    </section>
   );
 }
 

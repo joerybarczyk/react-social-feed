@@ -29,10 +29,10 @@ function Post(props) {
     <div className="body">
       <Container>
         <Row>
-          <Col>
+          <Col sm={6}>
             <h3 className="tertiary-text semibold">{props.post.author}</h3>
           </Col>
-          <Col className="d-flex justify-content-end">
+          <Col className="d-flex justify-content-end" sm={6}>
             <p style={{ color: "var(--secondary-color)", fontStyle: "italic" }}>
               {props.post.date}
             </p>

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import DisplayPosts from "./components/DisplayPosts/DisplayPosts";
 import CreatePost from "./components/CreatePost/CreatePost";
@@ -6,8 +6,12 @@ import Post from "./components/Post/Post";
 import "./App.css";
 
 function App() {
-  const samplePosts = require("./samplePosts.json");
-  const [posts, setPosts] = useState(samplePosts);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const samplePosts = require("./samplePosts.json");
+    setPosts(samplePosts);
+  }, []);
 
   const addNewPost = function (newPost) {
     newPost["id"] = posts.length;
@@ -26,18 +30,18 @@ function App() {
   return (
     <>
       <NavBar />
-      <div style={{ paddingTop: "140px" }} className="centered">
+      <main>
         <CreatePost addNewPost={addNewPost} />
         <DisplayPosts updatePost={updatePost} posts={posts}>
           {posts.map((post, index) => {
             return (
-              <div key={index}>
-                <Post updatePost={updatePost} postId={index} post={post} />
-              </div>
+              <section key={post.id}>
+                <Post post={post} updatePost={updatePost} />
+              </section>
             );
           })}
         </DisplayPosts>
-      </div>
+      </main>
     </>
   );
 }

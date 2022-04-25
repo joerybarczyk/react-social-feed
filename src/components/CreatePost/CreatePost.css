@@ -26,3 +26,10 @@ button {
 .form__post-input {
   height: 6em;
 }
+
+@media screen and (max-width: 1100px) {
+  .form__body {
+    width: 90vw;
+    height: auto;
+  }
+}

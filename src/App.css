@@ -7,6 +7,13 @@ form {
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 140px;
+}
+
 .app__body {
   height: auto;
   background-color: var(--app-bg-color);
@@ -47,10 +54,4 @@ form {
 
 .semibold {
   font-weight: 600;
-}
-
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
